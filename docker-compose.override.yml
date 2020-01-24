@@ -1,0 +1,17 @@
+version: '2'
+services:
+  onlyoffice-haproxy:
+    ports:
+      - '11080:80'
+      - '11443:443'
+      - '11936:1936'
+
+  onlyoffice-postgresql:
+    container_name: onlyoffice-postgresql
+    image: postgres:latest
+    ports:
+      - '15432:5432'
+
+  onlyoffice-communityserver:
+    container_name: onlyoffice-communityserver
+    image: onlyoffice/communityserver
